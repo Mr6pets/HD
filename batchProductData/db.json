@@ -1,9 +1,37 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  },
+  "news": [
+    {
+      "id": 1,
+      "content": "随机数据"
+    },
+    {
+      "id": 2,
+      "content": "随机数据2"
+    },
+    {
+      "content": "Front-line virtual",
+      "id": 3
+    },
+    {
+      "content": "user-facing Senior Forward Timor-Leste e-commerce",
+      "id": 4
+    }
+  ]
 }

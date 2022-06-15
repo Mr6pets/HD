@@ -20,4 +20,9 @@
 > 
 #### 如果报错了，可能是默认端口被占用了(可以用以下指定的端口)
 > json-server --watch --port 3003 --host 127.0.0.1 db.json
-> 
+
+####通过mockjs 批量生成mock假数据
+> npm i mockjs
+
+db.js 书写生成程序
+
