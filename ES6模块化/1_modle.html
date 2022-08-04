@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模块化的引擎</title>
+</head>
+<body>
+  <script>
+    // 立即执行函数
+    let module=(function(){
+      // 存放模块列表
+      const moduleList={};
+      // 定义模块(姓名，是否要依赖的模块，动作)
+     function define(name,modules,action){
+      // 定义模块调用的时候先将模块自己放置于moduleList中,apply(null:代表不改变this指向)
+      moduleList[name]=action.apply(null,modules);
+      console.log(moduleList)
+     }
+    //  讲模块导出
+     return {define}
+    })();
+
+    module.define('LA',[],function(){
+      //LA提供的功能
+      return {
+        first(arr){
+          return arr[0];
+        },
+        max(arr){
+          return arr.sort((a,b)=>b-a);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

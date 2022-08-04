@@ -83,5 +83,49 @@
 // console.log(a);//hello world
 /********************************************/
 
+/********公用一个内存地址***/
+// let alvisObj={name:"刘二狗"}
+// let copyObj=alvisObj;
+// copyObj.name="11";
+// console.log(alvisObj,"alvis")
+/*****************/
 
+
+/**内存不公用一个地址*/
+// let hd={name:"名字"}
+// let cms={
+//     name:hd.name
+// }
+// cms.name="111";
+// console.log(hd);
+// console.log(cms);
+
+
+/**当对象很多的时候可以通过循环遍历来 拷贝*/
+// let tempObj={name:"alvis",url:"www.alvis.com"}
+// let obj={};
+// for (const key in tempObj){
+//     obj[key]=tempObj[key];
+// }
+//  console.log(obj)//{ name: 'alvis', url: 'www.alvis.com' }
+// obj.name="111"
+// console.log(obj)//{ name: '111', url: 'www.alvis.com' }
+
+// 运用现有的API assigh
+// let tempObj={name:"alvis",url:"www.avlis.com"};
+// let obj=Object.assign({},tempObj);
+// console.log(obj,"alvis");//{ name: 'alvis', url: 'www.avlis.com' } alvis
+// obj.name="111";
+// console.log(tempObj);//{ name: 'alvis', url: 'www.avlis.com' } alvis
+// console.log(obj);//{ name: 'alvis', url: 'www.avlis.com' } alvis
+
+/**解构的方式**/
+let hd={name:"alvis",url:"www.alvis.com"}
+let obj={...hd};
+obj.name="111";
+console.log(hd)
+console.log(obj,"alvis");
+
+
+/**深拷贝和浅拷贝**/
 
