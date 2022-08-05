@@ -83,11 +83,12 @@
 // console.log(a);//hello world
 /********************************************/
 
-/********公用一个内存地址***/
+/********共用一个内存地址***/
 // let alvisObj={name:"刘二狗"}
 // let copyObj=alvisObj;
 // copyObj.name="11";
-// console.log(alvisObj,"alvis")
+// console.log(alvisObj,"alvis")//{ name: '11' } alvis
+
 /*****************/
 
 
@@ -101,6 +102,7 @@
 // console.log(cms);
 
 
+/******************************************深拷贝和浅拷贝-->以下是浅拷贝的方式**************************************/
 /**当对象很多的时候可以通过循环遍历来 拷贝*/
 // let tempObj={name:"alvis",url:"www.alvis.com"}
 // let obj={};
@@ -117,15 +119,16 @@
 // console.log(obj,"alvis");//{ name: 'alvis', url: 'www.avlis.com' } alvis
 // obj.name="111";
 // console.log(tempObj);//{ name: 'alvis', url: 'www.avlis.com' } alvis
-// console.log(obj);//{ name: 'alvis', url: 'www.avlis.com' } alvis
+// console.log(obj);//{ name: '111', url: 'www.avlis.com' } alvis
 
 /**解构的方式**/
-let hd={name:"alvis",url:"www.alvis.com"}
-let obj={...hd};
-obj.name="111";
-console.log(hd)
-console.log(obj,"alvis");
+// let hd={name:"alvis",url:"www.alvis.com"}
+// let obj={...hd};
+// obj.name="111";
+// console.log(hd)
+// console.log(obj,"alvis");
 
-
-/**深拷贝和浅拷贝**/
+// 浅拷贝无法深层次的复制，如果对象中有对象 我们是无法通过浅拷贝来复制的
+/******************************************深拷贝和浅拷贝-->以下是深拷贝的方式**************************************/
+// 这里就是要 通过无线递归来进行拷贝
 
