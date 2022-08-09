@@ -132,7 +132,105 @@
 /******************************************深拷贝和浅拷贝-->以下是深拷贝的方式**************************************/
 // 这里就是要 通过无线递归来进行拷贝
 
-let hd={name:'alvis',age:18}
+/**
+ * 举例1:
+* **/
+// let obj={
+//     name:"liu",
+//     user:{
+//         name:10,
+//     }
+// }
+//
+// let hd={
+//     name:obj.name,
+//     user:obj.user
+// }
+// hd.name="汉字";
+//
+// console.log( JSON.stringify(obj,null,2),"obj");
+// console.log(JSON.stringify(hd,null,2),"hd");
+
+
+/**
+ * 举例1：输出的结果
+ * {
+  "name": "liu",
+  "user": {
+    "name": 10
+  }
+} obj
+ {
+  "name": "汉字",
+  "user": {
+    "name": 10
+  }
+} hd
+
+ * */
+//
+// let obj={
+//     name:"alvis",
+//     user:{
+//         name:"liu"
+//     }
+// }
+//
+// let hd={
+//     name:obj.name,
+//     user:obj.user,
+// }
+// hd.user.name="汉字";
+//
+// console.log(JSON.stringify(obj,null,0),"obj");//{"name":"alvis","user":{"name":"汉字"}} obj
+// console.log(JSON.stringify(hd,null,0),"hd");//{"name":"alvis","user":{"name":"汉字"}} hd
+
+/**以上是无法改动深层次的结构的
+ * */
+
+// 浅拷贝的方式func
+// let data={
+//     name:"alvis",
+//     user:{
+//         name:"liu"
+//     }
+// }
+// function shadowCopy(object){
+//     let res={};
+//     for (const key in object) {
+//         res[key]=object[key]
+//     }
+//     return res;
+// }
+//
+// let hd=shadowCopy(data)
+// hd.user.name="汉字"
+// console.log( JSON.stringify(hd,null,0) ,'hd');
+// console.log(JSON.stringify(data,null,0),'data');
+
+//递归操作进行深拷贝
+let data={
+    name:"alvis",
+    user:{
+        name:"liu"
+    },
+    arr:[]
+};
+function deepCopy(obj){
+    let res=obj instanceof Array ? [] : {};
+    for (const [key,v] of Object.entries(obj)) {
+        //这里循环的时候要判断 解构出来的是对象还是数组[key,v]，就是解构循环的内容
+        res[key]= typeof v=="object" ? deepCopy(v) : v;
+    }
+    return res;
+}
+
+let hd=deepCopy(data)
+hd.user.name="汉字"
+hd.arr.push("abc")
+console.log( JSON.stringify(hd,null,0) ,'hd');//{"name":"alvis","user":{"name":"汉字"},"arr":["abc"]} hd
+console.log(JSON.stringify(data,null,0),'data');//{"name":"alvis","user":{"name":"liu"},"arr":[]} data
+
 
 
 
