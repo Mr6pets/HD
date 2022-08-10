@@ -33,3 +33,9 @@ component: resolve => require([@/views/student/StuInfoShow],resolve)
 
 
 
+
+
+
+
+
+
