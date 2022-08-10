@@ -26,7 +26,9 @@ component: resolve => require([@/views/student/StuInfoShow],resolve)
 }
 ~~~
 
-
+~~~js
+1111111
+~~~
 
 
 
