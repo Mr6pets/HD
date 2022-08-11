@@ -209,29 +209,88 @@
 // console.log(JSON.stringify(data,null,0),'data');
 
 //递归操作进行深拷贝
-let data={
-    name:"alvis",
-    user:{
-        name:"liu"
-    },
-    arr:[]
-};
-function deepCopy(obj){
-    let res=obj instanceof Array ? [] : {};
-    for (const [key,v] of Object.entries(obj)) {
-        //这里循环的时候要判断 解构出来的是对象还是数组[key,v]，就是解构循环的内容
-        res[key]= typeof v=="object" ? deepCopy(v) : v;
-    }
-    return res;
+// let data={
+//     name:"alvis",
+//     user:{
+//         name:"liu"
+//     },
+//     arr:[]
+// };
+// function deepCopy(obj){
+//     let res=obj instanceof Array ? [] : {};
+//     for (const [key,v] of Object.entries(obj)) {
+//         //这里循环的时候要判断 解构出来的是对象还是数组[key,v]，就是解构循环的内容
+//         res[key]= typeof v=="object" ? deepCopy(v) : v;
+//     }
+//     return res;
+// }
+//
+// let hd=deepCopy(data)
+// hd.user.name="汉字"
+// hd.arr.push("abc")
+// console.log( JSON.stringify(hd,null,0) ,'hd');//{"name":"alvis","user":{"name":"汉字"},"arr":["abc"]} hd
+// console.log(JSON.stringify(data,null,0),'data');//{"name":"alvis","user":{"name":"liu"},"arr":[]} data
+
+/**
+ * 面向对象
+ * exg:
+ * */
+// let a={
+//     name:"liu",
+//     show:function(){
+//         console.log(this.name)
+//     }
+// };
+// let b={
+//     name:'alvis',
+//     show:function (){
+//         console.log(this.name);
+//     }
+// }
+
+//如果想让所有的console 左后加上一些数字，你就需要每个都加一遍
+//所以才有了 工厂模式
+
+// function factory(mark){
+//     return {
+//         name:mark,
+//         show:function (){
+//             console.log(this.name+`.com1111`);
+//         }
+//     }
+// }
+// let factory_a=factory("liu");
+// factory_a.show()
+// let factory_b=factory("alvis");
+// factory_b.show()
+
+
+//构造函数
+
+// function User(name){
+//     this.name=name;
+//     this.show=function (){
+//         console.log(this.name+`.com`)
+//     }
+// }
+// let a=new User('liua');
+// console.log(a.name);
+// a.show();
+// let b =new User("alvis");
+// console.log(b.name);
+// b.show();
+
+//查看对象的属性
+let user={
+    name:'liu',
+    age:32
 }
+let single=Object.getOwnPropertyDescriptor(user,'name')
+console.log(single,"alvis");
+let all=Object.getOwnPropertyDescriptors(user);
+console.log(all,"all");
 
-let hd=deepCopy(data)
-hd.user.name="汉字"
-hd.arr.push("abc")
-console.log( JSON.stringify(hd,null,0) ,'hd');//{"name":"alvis","user":{"name":"汉字"},"arr":["abc"]} hd
-console.log(JSON.stringify(data,null,0),'data');//{"name":"alvis","user":{"name":"liu"},"arr":[]} data
-
-
+//
 
 
 
