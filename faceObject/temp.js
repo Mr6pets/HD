@@ -290,7 +290,7 @@ console.log(single,"alvis");
 let all=Object.getOwnPropertyDescriptors(user);
 console.log(all,"all");
 
-//
+
 
 
 
