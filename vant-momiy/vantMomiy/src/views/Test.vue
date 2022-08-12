@@ -1,23 +1,31 @@
+
+<template>
+<!--  <couterView></couterView>-->
+<!--  <couter-view></couter-view>-->
+<alvis-couter-view :count="count"></alvis-couter-view>
+  <couterCotroler @parentMax="increment($event)"/>
+
+</template>
+
 <script >
 import {ref} from 'vue';
+import couterView from "@/components/couterView.vue";
+import couterCotroler from "../components/couterCotroler.vue";
   export default{
+    components:{
+      // couterView
+      "alvis-couter-view":couterView,
+      couterCotroler
+    },
     setup(){
       const count=ref(1000);
 
-      const min=()=>{
-        count.value-=1
-      };
-      const max=()=>{
-        count.value+=1
+      const increment=(num)=>{
+        count.value+=num;
       }
-      return {count,min,max}
+      return {count,increment}
     }
   }
 </script>
 
-<template>
-  <div>{{count}}</div>
-  <button @click="max">+</button>
-  <button @click="min">-</button>
-</template>
 
