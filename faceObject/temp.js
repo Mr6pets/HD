@@ -286,9 +286,23 @@ let user={
     age:32
 }
 let single=Object.getOwnPropertyDescriptor(user,'name')
-console.log(single,"alvis");
+console.log(single,"alvis");//{ value: 'liu', writable: true, enumerable: true, configurable: true } alvis
 let all=Object.getOwnPropertyDescriptors(user);
 console.log(all,"all");
+/**
+ * {
+  name: {
+    value: 'liu',
+    writable: true,
+    enumerable: true,
+    configurable: true
+  },
+  age: { value: 32, writable: true, enumerable: true, configurable: true }
+} all
+
+ * */
+
+
 
 
 
