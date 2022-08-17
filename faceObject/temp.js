@@ -281,14 +281,14 @@
 // b.show();
 
 //查看对象的属性
-let user={
-    name:'liu',
-    age:32
-}
-let single=Object.getOwnPropertyDescriptor(user,'name')
-console.log(single,"alvis");//{ value: 'liu', writable: true, enumerable: true, configurable: true } alvis
-let all=Object.getOwnPropertyDescriptors(user);
-console.log(all,"all");
+// let user={
+//     name:'liu',
+//     age:32
+// }
+// let single=Object.getOwnPropertyDescriptor(user,'name')
+// console.log(single,"alvis");//{ value: 'liu', writable: true, enumerable: true, configurable: true } alvis
+// let all=Object.getOwnPropertyDescriptors(user);
+// console.log(all,"all");
 /**
  * {
   name: {
@@ -303,8 +303,13 @@ console.log(all,"all");
  * */
 
 /**
- * 定义其他的对象构造
+ * 对象的内的set get 的知识展示
+ *
  * */
+let B={
+    name:'alvis',
+    set:
+}
 
 
 
