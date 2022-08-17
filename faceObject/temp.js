@@ -308,7 +308,6 @@
  * */
 let B={
     name:'alvis',
-    set:
 }
 
 
