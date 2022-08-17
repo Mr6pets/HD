@@ -308,6 +308,7 @@
  * */
 let B={
     name:'alvis',
+    aga:11
 }
 
 
