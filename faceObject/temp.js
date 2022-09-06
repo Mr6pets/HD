@@ -310,7 +310,10 @@ let B={
     name:'alvis',
     aga:11
 }
-
+let alvis={
+    name:"alvis",
+    age:26
+}
 
 
 
