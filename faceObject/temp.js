@@ -303,7 +303,7 @@
  * */
 
 /**
- * 对象的内的set get 的知识展示
+ * 对象的内的set get 的知识展示关于getter 和setter的使用
  *
  * */
 let B={
